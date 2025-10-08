@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Logout</title>
+  <style>
+    /* Body Style */
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, skyblue  , burlywood);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Container */
+    .logout-container {
+      text-align: center;
+      background-color: blue;
+      padding: 60px 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      border: 3px solid burlywood;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    /* Log Out Button */
+    .logout-btn {
+      padding: 20px 60px;
+      background-color: khaki;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    .logout-btn:hover {
+      background-color: #800000;
+      transform: translateY(-3px);
+    }
+
+    /* Logout Message */
+    .logout-message {
+      margin-top: 30px;
+      font-size: 20px;
+      color: red;
+      font-style: italic;
+    }
+
+    /* Yes / No Button Group */
+    .confirmation-buttons {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    /* Yes and No Buttons */
+    .yes-btn,
+    .no-btn {
+      padding: 14px 30px;
+      font-size: 20px;
+      font-weight: bold;
+      background-color: khaki;
+      color: #333;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .yes-btn:hover,
+    .no-btn:hover {
+      background-color: #d2b48c;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logout-container">
+    <button class="logout-btn" onclick="showConfirmation()">Log Out</button>
+    
+    <p class="logout-message" id="confirmationText" style="display: none;">
+      Are you sure you want to log out?
+    </p>
+    
+    <div class="confirmation-buttons" id="confirmationButtons" style="display: none;">
+      <button class="yes-btn" onclick="logout()">Yes</button>
+      <button class="no-btn" onclick="cancelLogout()">No</button>
+    </div>
+  </div>
+
+  <script>
+    function showConfirmation() {
+      document.getElementById('confirmationText').style.display = 'block';
+      document.getElementById('confirmationButtons').style.display = 'flex';
+    }
+
+    function logout() {
+      window.location.href = "login.html";
+    }
+
+    function cancelLogout() {
+      document.getElementById('confirmationText').style.display = 'none';
+      document.getElementById('confirmationButtons').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

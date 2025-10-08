@@ -1,0 +1,53 @@
+/* =====================
+   NAVBAR BOXES
+===================== */
+.navbar-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: ye;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap; /*  makes it responsive */
+}
+
+/* =====================
+   INDIVIDUAL NAV BOXES
+===================== */
+.nav-box {
+  background-color: Blue;
+  color: black;
+  text-decoration: black;
+  padding: 20px 12px;      /* smaller padding */
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;        /*smaller font */
+  text-align: center;
+  min-width: 80px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s, transform 0.2s, color 0.3s;
+}
+
+.nav-box:hover {
+  background-color: bisque;
+  color: orange;
+  transform: translateY(-2px);
+}
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Style sections */
+section {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: yellow;
+  border: 2px solid #8b4513;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+
+  <div class="Zambosurs">
+    <h3>ZamboSur</h3>
+  </div>
+
+  <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+
+  <div class="sidebar" id="sidebar">
+    <h1>Menu</h1>
+    <a href="Index.html" class="active">Home</a>
+    <a href="places.html">Places</a>
+    <a href="delecacies.html">Delicacies</a>
+    <a href="login.html">Log in</a>
+     <a href="login.html">Log out</a>
+  </div>
+
+  <div class="login-box">
+    <img src="unnamed (1).webp" class="logo" alt="Logo" />
+    <h2>Portal</h2>
+    <p>Province of Zamboanga Del Sur</p>
+
+    <form onsubmit="return login()">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+
+      <div class="message" id="message"></div>
+
+      <button type="submit" class="login-btn">LOG IN</button>
+      <button type="button" class="create-btn">CREATE ACCOUNT</button>
+    </form>
+
+    <footer>
+      <small>&copy; Portal<br>Powered by Jebsam</small>
+    </footer>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const msg = document.getElementById("message");
+
+      // Demo credentials
+      const demoUser = "Jebsam";
+      const demoPass = "555";
+
+      if (user === demoUser && pass === demoPass) {
+        msg.style.color = "green";
+        msg.textContent = "Login successful!";
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 1000);
+      } else {
+        msg.style.color = "red";
+        msg.textContent = "Invalid username or password.";
+      }
+
+      return false; // Prevent form from submitting
+    }
+
+    // Optional: Define toggleMenu if you're using the hamburger
+    function toggleMenu() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.classList.toggle("open");
+    }
+  </script>
+
+</body>
+</html>
